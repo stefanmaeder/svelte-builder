@@ -1,20 +1,19 @@
-name: labeling_workflow
+name: svelte-builder
 
 on:
-  issues:
-    types: [opened, edited, reopened]
+  push:
+    paths:
+      - 'src/**'
+      - 'public/**'
 
 jobs:
-  label_issue:
+  svelte-builder:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v1
 
-      - name: Print Hello world
-        run: echo Hello world!
-
-      - name: label-step
-        uses: ./.github/actions/issuelabeler
+      - name: svelte-builder-step
+        uses: ./.github/actions/svelte-builder
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
