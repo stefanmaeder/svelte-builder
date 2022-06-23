@@ -2,5 +2,5 @@ name: "Svelte Builder"
 description: "automatically build new svelte apps"
 
 runs:
-  using: "node18"
+  using: "node16"
   main: "index.js"
